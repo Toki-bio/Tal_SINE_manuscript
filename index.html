@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tal SINE — manuscript data</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { font-family: Calibri, 'Segoe UI', Arial, sans-serif; margin: 0; background: #fff; color: #1a2634; }
+  header { background: #1a2634; color: #fff; padding: 24px 32px; }
+  header h1 { margin: 0 0 6px 0; font-size: 1.4rem; }
+  header p { margin: 0; color: rgba(255,255,255,.75); font-size: .95rem; }
+  main { max-width: 900px; margin: 0 auto; padding: 24px 32px; }
+  table.tribes { border-collapse: collapse; width: 100%; margin-top: 12px; }
+  table.tribes th, table.tribes td { border: 1px solid #ccc; padding: 8px 12px; text-align: left; }
+  table.tribes th { background: #f2f2f2; }
+  a { color: #1a5fb4; }
+  .muted { color: #666; font-size: .9rem; }
+  code { background: #f2f2f2; padding: 1px 5px; border-radius: 3px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Tal SINE family — manuscript supporting data</h1>
+  <p>Per-species SINEderella run reports for the six talpid genomes analyzed in the manuscript.</p>
+</header>
+<main>
+  <p>This repository accompanies the manuscript on the Tal SINE family in Talpidae (moles and desmans).
+  It provides the per-species subfamily consensus alignments, tribe (99% copy cluster) alignments, and
+  subfamily composition/divergence data underlying Figures 1, 2, 5, S2, and S4&ndash;S8. Pipeline QC data
+  (assignment funnel stats, bitscore thresholds, quality flags) is included per species for reproducibility
+  but was not used to generate manuscript figures.</p>
+
+  <table class="tribes">
+    <thead><tr><th>Tribe</th><th>Species</th><th>Report</th></tr></thead>
+    <tbody>
+      <tr><td>Talpini</td><td><em>Talpa occidentalis</em></td><td><a href="toc/report.html">toc/report.html</a></td></tr>
+      <tr><td>Talpini</td><td><em>Talpa europaea</em></td><td><a href="teu/report.html">teu/report.html</a></td></tr>
+      <tr><td>Desmanini</td><td><em>Galemys pyrenaicus</em></td><td><a href="gpy/report.html">gpy/report.html</a></td></tr>
+      <tr><td>Desmanini</td><td><em>Desmana moschata</em></td><td><a href="dmo/report.html">dmo/report.html</a></td></tr>
+      <tr><td>Scalopini</td><td><em>Scalopus aquaticus</em></td><td><a href="saq/report.html">saq/report.html</a></td></tr>
+      <tr><td>Condylurini</td><td><em>Condylura cristata</em></td><td><a href="ccr/report.html">ccr/report.html</a></td></tr>
+    </tbody>
+  </table>
+
+  <h2 style="margin-top:32px;">Custom software</h2>
+  <p>The pipeline tools used for SINE detection, subfamily classification, tribe clustering, and orthology
+  assessment are maintained as separate repositories:</p>
+  <ul>
+    <li><a href="https://github.com/Toki-bio/sear2k">sear2k</a> — SINE copy detection (SSEARCH36-based genome scan)</li>
+    <li><a href="https://github.com/Toki-bio/SubFam">SubFam</a> — subfamily consensus building</li>
+    <li><a href="https://github.com/Toki-bio/FaSort10">FaSort10 / asSINEment</a> — subfamily assignment voting</li>
+    <li><a href="https://github.com/Toki-bio/SINE_orth_loc">SINE_orth_loc</a> — orthologous locus assessment</li>
+  </ul>
+
+  <p class="muted" style="margin-top:32px;">Source: <a href="https://github.com/Toki-bio/Tal_SINE_manuscript">github.com/Toki-bio/Tal_SINE_manuscript</a></p>
+</main>
+</body>
+</html>
