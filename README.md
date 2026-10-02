@@ -19,7 +19,18 @@ Each species directory (`toc`, `teu`, `gpy`, `dmo`, `saq`, `ccr`) contains:
 - `alignments/` — subfamily and tribe MSA FASTA files, viewable via linked
   [MSA Viewer](https://toki-bio.github.io/MSA-viewer/) links in each report.
 - `tribes/` — tribe alignments and `tribes_summary.tsv`.
-- `subfam/` — SubFam chunk-consensus alignment files.
+- `subfam/` — SubFam chunk-consensus alignment files, and
+  `<species>_subfam_sample_30000.fasta.gz`: the random sample of 30,000 Tal loci on which
+  subfamilies were discovered (600 SubFam batches of 50). The sample was drawn once per
+  species from a preliminary genome search:
+  - *T. occidentalis*, *T. europaea*, *G. pyrenaicus*, *D. moschata*: search with the
+    b2_Saq consensus; sampled with `shuf`, no seed;
+  - *C. cristata*: search with the classic Tal consensus; sampled with `shuf`, no seed;
+  - *S. aquaticus*: SINEderella step-1 sample (`seqkit sample`, seed 11) of a search with
+    the *C. cristata* consensus set.
+
+  All loci in each genome were then assigned to the resulting subfamilies, so subfamily
+  copy numbers were counted directly, not extrapolated from the sample.
 
 This repository does not include analyses not described in the manuscript
 (e.g., PCA mutation-landscape plots, per-subfamily diagnostic galleries) or
@@ -37,4 +48,4 @@ The pipeline tools used are maintained as separate repositories:
 ## Genome assemblies
 
 Analyzed genome assemblies are publicly available from NCBI GenBank/RefSeq;
-accession numbers are listed in the manuscript's Methods section (2.1.1).
+accession numbers are listed in the manuscript's Methods section (2.1).
