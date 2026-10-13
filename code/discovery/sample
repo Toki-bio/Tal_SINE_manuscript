@@ -1,0 +1,7 @@
+# select $1 random FASTA sequences from $2 multiFASTA bank
+# based on https://www.biostars.org/p/18831/#18835
+cat $2 |\
+awk '/^>/ { if(i>0) printf("\n"); i++; printf("%s\t",$0); next;} {printf("%s",$0);} END { printf("\n");}' |\
+shuf |\
+head -n $1 |\
+awk 'BEGIN{FS="\t"}{printf("%s\n%s\n",$1,$2)}' > "$2"."$1"

@@ -1,6 +1,6 @@
 # Tal SINE — manuscript supporting data
 
-Per-species SINEderella run reports and intermediate outputs for the six talpid genomes
+Per-species run reports and intermediate outputs for the six talpid genomes
 (Talpini, Desmanini, Scalopini, Condylurini) analyzed in the manuscript on the Tal SINE family.
 
 Live pages: https://toki-bio.github.io/Tal_SINE_manuscript/
@@ -17,6 +17,7 @@ Each species directory (`toc`, `teu`, `gpy`, `dmo`, `saq`, `ccr`) contains:
   100 random copies with flanks.
 - `tribes/` — tribe alignments, `tribes_summary.tsv` (all clusters with at least five copies)
   and `tribes_metadata.txt`.
+- `code/` — the scripts used (see below).
 - `subfam/` — SubFam chunk-consensus alignments, and `<species>_subfam_sample_30000.fasta.gz`:
   the random sample of 30,000 Tal loci on which the subfamilies were discovered (600 SubFam
   batches of 50). The sample was drawn once per species, with GNU `shuf` and no fixed seed,
@@ -65,14 +66,15 @@ Figure S5 (*T. europaea* tribe 04) is `teu/tribes/teu_tribe06_79seqs.aln.fa`.
 
 ## Software — exact versions used
 
-Each tool repository carries the tag `tal-manuscript-2026`, pointing to the code that was run:
+`code/` holds the exact scripts that produced the results (search, subfamily discovery,
+assignment, copy numbers, similarity, orthology), byte-identical to the copies used in the runs,
+with checksums and the commands used; see [`code/README.md`](code/README.md).
 
-- [SINEderella](https://github.com/Toki-bio/SINEderella/tree/tal-manuscript-2026) — pipeline:
-  copy search and extraction, asSINEment subfamily assignment (`step2_asSINEment.sh`), reports;
-  and `SubFam`, used for subfamily discovery. The tag holds the step scripts byte-identical to
-  the copies stored in the run directories (see `TAL_MANUSCRIPT_2026.md` there).
+The stand-alone tools are also maintained as separate repositories; the versions used carry the
+tag `tal-manuscript-2026`:
+
 - [sear2k](https://github.com/Toki-bio/sear2k/tree/tal-manuscript-2026) — `sear`, SSEARCH36-based
-  genome search (commit f315c11).
+  genome search (commit f315c11);
 - [SINE_orth_loc](https://github.com/Toki-bio/SINE_orth_loc/tree/tal-manuscript-2026) —
   orthologous presence/absence of loci (commit 05d0dab; `ComPair.sh` 376a86e).
 
