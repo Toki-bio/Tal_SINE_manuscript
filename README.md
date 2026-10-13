@@ -17,7 +17,7 @@ Each species directory (`toc`, `teu`, `gpy`, `dmo`, `saq`, `ccr`) contains:
   100 random copies with flanks.
 - `tribes/` — tribe alignments, `tribes_summary.tsv` (all clusters with at least five copies)
   and `tribes_metadata.txt`.
-- `code/` — the scripts used (see below).
+- `scripts/` — the exact scripts used in this study (see below).
 - `subfam/` — SubFam chunk-consensus alignments, and `<species>_subfam_sample_30000.fasta.gz`:
   the random sample of 30,000 Tal loci on which the subfamilies were discovered (600 SubFam
   batches of 50). The sample was drawn once per species, with GNU `shuf` and no fixed seed,
@@ -66,9 +66,9 @@ Figure S5 (*T. europaea* tribe 04) is `teu/tribes/teu_tribe06_79seqs.aln.fa`.
 
 ## Software — exact versions used
 
-`code/` holds the exact scripts that produced the results (search, subfamily discovery,
+`scripts/` holds the exact scripts that produced the results (search, subfamily discovery,
 assignment, copy numbers, similarity, orthology), byte-identical to the copies used in the runs,
-with checksums and the commands used; see [`code/README.md`](code/README.md).
+with checksums and the commands used; see [`scripts/README.md`](scripts/README.md).
 
 The stand-alone tools are also maintained as separate repositories; the versions used carry the
 tag `tal-manuscript-2026`:
